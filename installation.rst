@@ -30,18 +30,18 @@ Add required PPAs:
 
 .. code::
 
-   sudo add-apt-repository ppa:nginx/stable
-   sudo add-apt-repository ppa:chris-lea/zeromq
-   sudo add-apt-repository ppa:upaas/stable
+    sudo add-apt-repository ppa:nginx/stable
+    sudo add-apt-repository ppa:chris-lea/zeromq
+    sudo add-apt-repository ppa:upaas/stable
 
 Install upaas-router meta package. It contains uWSGI config files needed to run
 uWSGI FastRouter node.
 
 .. code::
 
-   sudo apt-get update
-   sudo apt-get dist-upgrade
-   sudo apt-get install upaas-router
+    sudo apt-get update
+    sudo apt-get dist-upgrade
+    sudo apt-get install upaas-router
 
 Backend nodes
 ^^^^^^^^^^^^^
@@ -50,18 +50,18 @@ Add required PPAs:
 
 .. code::
 
-   sudo add-apt-repository ppa:brightbox/ruby-ng
-   sudo add-apt-repository ppa:chris-lea/zeromq
-   sudo add-apt-repository ppa:chris-lea/php5.5
-   sudo add-apt-repository ppa:upaas/stable
+    sudo add-apt-repository ppa:brightbox/ruby-ng
+    sudo add-apt-repository ppa:chris-lea/zeromq
+    sudo add-apt-repository ppa:chris-lea/php5.5
+    sudo add-apt-repository ppa:upaas/stable
 
 Install python-upaas-admin package. It contains uPaaS API and web UI server.
 
 .. code::
 
-   sudo apt-get update
-   sudo apt-get dist-upgrade
-   sudo apt-get install python-upaas-admin
+    sudo apt-get update
+    sudo apt-get dist-upgrade
+    sudo apt-get install python-upaas-admin
 
 After installing uPaaS admin package edit /etc/upaas/upaas.yml config, it must
 be identical on all backend nodes.
