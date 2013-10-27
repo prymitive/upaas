@@ -21,7 +21,7 @@ This step is executed only for first or fresh package.
 
 uPaaS installs all packages required for interpreter used by our application. This step can be customized only be uPaaS administrator.
 
-Step 3 - Install applicaton dependencies
+Step 3 - Install application dependencies
 ----------------------------------------
 
 uPaaS installs all packages requested to install in application metadata file. This step can be customized only using application metadata.
@@ -44,7 +44,7 @@ uPaaS handles that by executing few customizable actions:
   * before - this action is intended for application, it allows metadata author to inject any commands needed to be executed before main action, but uPaaS admin provide default commands for this action if needed
   * main - this action should be used to run all main actions for given interpreter (like bundler or pip commands), application can override it in metadata file if really needed
   * after - this action is intended for application, they should call database migration commands here, uPaaS administrator can provide default actions in configuration file
-  * finalize - this action can only be cusotmized by uPaaS administrator, it is intended to run cleanup commands
+  * finalize - this action can only be customized by uPaaS administrator, it is intended to run cleanup commands
 
 Step 6 - Creating package archive
 ---------------------------------
