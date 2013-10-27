@@ -13,6 +13,7 @@ Currently uPaaS is still in early stages of development so only core features ar
 * automated scalability - when application is under high load uPaaS will quickly add new nodes
 * built in statistics - pretty graphs for every application out of the box
 * monitoring and self-repair - uPaaS will constantly check if everything is running and it will try to fix itself when needed
+* simple deployments - just do ``git push`` and uPaaS will take care of the reset (with git post-receive hook)
 
 Components
 ----------
