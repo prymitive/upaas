@@ -248,4 +248,4 @@ Example:
 Interpreter settings
 --------------------
 
-Every avaiable interpreter must be configured before app can use it. See `interpreters`.
+Every avaiable interpreter must be configured before app can use it. See :doc:`interpreters`.
