@@ -71,9 +71,9 @@ Full example:
      secretkey: very-very-secret
      debug: false
      domains:
-       - admin.upaas.org
-       - admin.upaas.com
-       - *.upaas-admin.io
+       - "admin.upaas.org"
+       - "admin.upaas.com"
+       - "*.upaas-admin.io"
 
 
 Paths settings
