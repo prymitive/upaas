@@ -6,7 +6,7 @@ Pre-Requirements
 
 MongoDB database accessible from backend nodes. MongoDB is used both for uPaaS data and package files, so it might grow to several gigabytes or more, depending on the number of registered application. Each package will use at least 200MB (in case of Ubuntu server).
 
-Domain name that will be pointing to router nodes. You don't need to buy one for testing purposes or intranet usage, if you have dnsmasq running as your dns server you might add those lines there:
+Domain name that will be pointing to router nodes. You don't need to buy one for testing purposes or intranet usage, if you have dnsmasq running as your dns server you might add those lines to dnsmasq configuration file:
 
 .. code-block:: none
 
