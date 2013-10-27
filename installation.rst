@@ -50,4 +50,4 @@ Install python-upaas-admin package. It contains uPaaS API and web UI server.
     sudo apt-get dist-upgrade
     sudo apt-get install python-upaas-admin
 
-After installing uPaaS admin package edit /etc/upaas/upaas.yml config, it must be identical on all backend nodes. Be sure to set proper storage handler since 0.1 release defaults to local filesystem storage.
+After installing uPaaS admin package edit /etc/upaas/upaas.yml config, it must be identical on all backend nodes. Be sure to set proper storage handler since 0.1.0 release defaults to local filesystem storage.
