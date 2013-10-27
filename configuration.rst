@@ -11,27 +11,27 @@ Basic settings:
 
 .. code:: yaml
 
-   mongodb:
-     host: localhost
-     port: 27017
-     database: upaas
+    mongodb:
+      host: localhost
+      port: 27017
+      database: upaas
 
-If MongoDB requires authorization for database access (recommended) add username and password options.
+If MongoDB requires authorization for database access (recommended) add ``username`` and ``password`` options.
 
 .. code:: yaml
 
-   mongodb:
-     [...]
-     username: username
-     password: password
+    mongodb:
+      [...]
+      username: username
+      password: password
 
 To provide high availability to MongoDB installation it is recommended to use MongoDB cluster (replica set or sharding). To pass replica set address to uPaaS use uri option instead of host and port pair, example:
 
 .. code:: yaml
 
-   mongodb:
-     [...]
-     uri: mongodb://db1,db2/?replicaSet=upaas
+    mongodb:
+      [...]
+      uri: mongodb://db1,db2/?replicaSet=upaas
 
 
 Admin UI settings
@@ -41,8 +41,8 @@ For every installation secret key must be set, it must be unique (for each clust
 
 .. code:: yaml
 
-   admin:
-     secretkey: very-very-secret
+    admin:
+      secretkey: very-very-secret
 
 Other options:
 
@@ -60,13 +60,13 @@ Full example:
 
 .. code:: yaml
 
-   admin:
-     secretkey: very-very-secret
-     debug: false
-     domains:
-       - "admin.upaas.org"
-       - "admin.upaas.com"
-       - "*.upaas-admin.io"
+    admin:
+      secretkey: very-very-secret
+      debug: false
+      domains:
+        - "admin.upaas.org"
+        - "admin.upaas.com"
+        - "*.upaas-admin.io"
 
 
 Paths settings
@@ -76,10 +76,10 @@ uPaaS stores files in few location, they can be customized with those settings:
 
 .. code:: yaml
 
-   paths:
-     workdir: /var/upaas/workdir
-     apps: /var/upaas/apps
-     vassals: /etc/uwsgi-emperor/vassals
+    paths:
+      workdir: /var/upaas/workdir
+      apps: /var/upaas/apps
+      vassals: /etc/uwsgi-emperor/vassals
 
 ``workdir``
 ...........
@@ -104,10 +104,10 @@ Package files are stored by default in MongoDB database but custom storage handl
 
 .. code:: yaml
 
-   storage:
-     handler: upaas.storage.local.LocalStorage
-     settings:
-       dir: /var/upaas/storage
+    storage:
+      handler: upaas.storage.local.LocalStorage
+      settings:
+        dir: /var/upaas/storage
 
 This way uPaaS will store all packages as plain files in /var/upaas/storage directory.
 
@@ -115,14 +115,14 @@ To use dedicated MongoDB database for packages use:
 
 .. code:: yaml
 
-   storage:
-     handler: upaas.storage.mongodb.MongoDBStorage
-     settings:
-       host: mongo-db-packages-host
-       port: 27017
-       database: upaas-packages
-       username: username
-       password: password
+    storage:
+      handler: upaas.storage.mongodb.MongoDBStorage
+      settings:
+        host: mongo-db-packages-host
+        port: 27017
+        database: upaas-packages
+        username: username
+        password: password
 
 
 OS bootstrap
@@ -132,17 +132,17 @@ All application packages are built using empty os system image, so first such em
 
 .. code:: yaml
 
-   bootstrap:
-     timelimit: 600
-     env:
-       LC_ALL: C
-       LANG: C
-     commands:
-       - debootstrap --components=main,universe,multiverse,restricted `lsb_release -sc` %workdir%
-     maxage: 7
-     packages:
-       - python-software-properties
-       - build-essential
+    bootstrap:
+      timelimit: 600
+      env:
+        LC_ALL: C
+        LANG: C
+      commands:
+        - debootstrap --components=main,universe,multiverse,restricted `lsb_release -sc` %workdir%
+      maxage: 7
+      packages:
+        - python-software-properties
+        - build-essential
 
 ``timelimit``
 .............
@@ -157,7 +157,7 @@ All application packages are built using empty os system image, so first such em
 ``commands``
 ............
 
-  List of commands used to create system image files. %workdir% makro will be expanded into directory path where image is being created.
+  List of commands used to create system image files. ``%workdir%`` makro will be expanded into directory path where image is being created.
 
 ``maxage``
 ..........
@@ -177,25 +177,25 @@ This settings are used to tell uPaaS what commands should be used to interact wi
 
 .. code:: yaml
 
-   commands:
-     timelimit: 600
-     install:
-       env:
-         DEBIAN_FRONTEND: noninteractive
-         LC_ALL: C
-         LANG: C
-       cmd: apt-get install --no-install-recommends -y %package%
-     uninstall:
-       env:
-         DEBIAN_FRONTEND: noninteractive
-         LC_ALL: C
-         LANG: C
-       cmd: apt-get remove -y %package%
+    commands:
+      timelimit: 600
+      install:
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          LC_ALL: C
+          LANG: C
+        cmd: apt-get install --no-install-recommends -y %package%
+      uninstall:
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          LC_ALL: C
+          LANG: C
+        cmd: apt-get remove -y %package%
 
 ``install``
 ...........
 
-  Describes how to install package. ``cmd`` option contains command that needs to be executed, %package% macro will be expanded into package name. ``env`` and ``timelimit`` options have the same meaning as in bootstrap section.
+  Describes how to install package. ``cmd`` option contains command that needs to be executed, ``%package%`` macro will be expanded into package name. ``env`` and ``timelimit`` options have the same meaning as in bootstrap section.
 
 ``uninstall``
 .............
