@@ -1,0 +1,55 @@
+os:
+  Ubuntu:
+    packages:
+      - git-core
+      - rake
+      - libpq-dev
+      - libmysqlclient-dev
+      - libsqlite3-dev
+      - imagemagick
+      - libmagickcore-dev
+      - libmagickwand-dev
+
+
+interpreter:
+  type: ruby
+  versions:
+    - 2.0.0
+
+
+repository:
+  clone: git clone --depth=10 --quiet --branch 2.3-stable git://github.com/redmine/redmine.git %destination%
+  update:
+    - rm -f Gemfile.lock
+    - git reset --hard
+    - git pull
+  info: git log -n 1
+  changelog: git log --no-merges %old%..%new%"
+
+
+actions:
+  setup:
+    before: |
+      echo "
+      production:
+        adapter: sqlite3
+        database: db/redmine.db
+      " > config/database.yml
+    main:
+      - gem install bundler
+      - bundle install --without test development
+    after: |
+      if [ -n "$UPAAS_FRESH_PACKAGE" ] ; then
+        echo ">>> Generating secret token"
+        rake generate_secret_token
+      fi
+      echo ">>> Migrating database"
+      rake db:migrate
+      if [ -n "$UPAAS_FRESH_PACKAGE" ] ; then
+        echo ">>> Loading default data"
+        rake redmine:load_default_data
+      fi
+
+
+env:
+  REDMINE_LANG: en
