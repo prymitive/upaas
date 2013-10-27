@@ -12,6 +12,7 @@ Registering new application
 ---------------------------
 
 To register new application you need to provide unique application name and valid metadata file.
+Example metadata for deploying :download:`redmine <static/metadata/redmine.yml>` 
 
 .. image:: static/img/register.png
 
