@@ -201,3 +201,44 @@ This settings are used to tell uPaaS what commands should be used to interact wi
 .............
 
   Same as ``install`` but describes how to uninstall package.
+
+
+Application deployment settings
+-------------------------------
+
+``uid``
+.......
+
+  Uid of user application will be running as, for example www-data.
+
+``gid``
+.......
+
+  Name of group that will be used to run application.
+
+``home``
+........
+
+  Path where application directory will be placed inside system image.
+
+``domain``
+..........
+
+  Every application will be accessible using system domain, this is where name of this domain is specified.
+
+``tcp``
+
+  Contains two options ``port_min`` and ``port_max`` used to specify port range used for application sockets.
+
+Example:
+
+.. code-block:: yaml
+
+    apps:
+      uid: www-data
+      gid: www-data
+      home: /home/app
+      domain: upaas.org
+      tcp:
+        port_min: 2001
+        port_max: 7999
