@@ -15,6 +15,7 @@ Contents:
    installation
    configuration
    webui
+   buildprocess
 
 
 Indices and tables
