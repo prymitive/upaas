@@ -22,7 +22,7 @@ username and password options.
 .. code:: yaml
 
    mongodb:
-    [...]
+     [...]
      username: username
      password: password
 
@@ -33,8 +33,8 @@ use uri option instead of host and port pair, example:
 .. code:: yaml
 
    mongodb:
-    [...]
-    uri: mongodb://db1,db2/?replicaSet=upaas
+     [...]
+     uri: mongodb://db1,db2/?replicaSet=upaas
 
 
 Admin UI settings
