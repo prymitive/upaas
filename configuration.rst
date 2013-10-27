@@ -227,6 +227,7 @@ Application deployment settings
   Every application will be accessible using system domain, this is where name of this domain is specified.
 
 ``tcp``
+.......
 
   Contains two options ``port_min`` and ``port_max`` used to specify port range used for application sockets.
 
@@ -242,3 +243,9 @@ Example:
       tcp:
         port_min: 2001
         port_max: 7999
+
+
+Interpreter settings
+--------------------
+
+Every avaiable interpreter must be configured before app can use it. See `interpreters`.
