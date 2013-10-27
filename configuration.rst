@@ -225,6 +225,7 @@ Application deployment settings
 ..........
 
   Every application will be accessible using system domain, this is where name of this domain is specified.
+  This domain must belong to you and point to uPaaS router nodes (using dns round robin or virtual ip).
 
 ``tcp``
 .......
