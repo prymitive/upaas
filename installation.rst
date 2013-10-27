@@ -28,7 +28,7 @@ Router nodes
 
 Add required PPAs:
 
-.. code:: bash
+.. code::
 
    sudo add-apt-repository ppa:nginx/stable
    sudo add-apt-repository ppa:chris-lea/zeromq
@@ -37,7 +37,7 @@ Add required PPAs:
 Install upaas-router meta package. It contains uWSGI config files needed to run
 uWSGI FastRouter node.
 
-.. code:: bash
+.. code::
 
    sudo apt-get update
    sudo apt-get dist-upgrade
@@ -48,7 +48,7 @@ Backend nodes
 
 Add required PPAs:
 
-.. code:: bash
+.. code::
 
    sudo add-apt-repository ppa:brightbox/ruby-ng
    sudo add-apt-repository ppa:chris-lea/zeromq
@@ -57,7 +57,7 @@ Add required PPAs:
 
 Install python-upaas-admin package. It contains uPaaS API and web UI server.
 
-.. code:: bash
+.. code::
 
    sudo apt-get update
    sudo apt-get dist-upgrade
