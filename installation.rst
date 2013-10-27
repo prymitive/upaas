@@ -30,6 +30,12 @@ Install upaas-router meta package. It contains uWSGI config files needed to run 
     sudo apt-get dist-upgrade
     sudo apt-get install upaas-router
 
+Remove default nginx site config.
+
+.. code-block:: none
+
+    rm /etc/nginx/sites-enabled/default
+
 Backend nodes
 ^^^^^^^^^^^^^
 
