@@ -14,6 +14,7 @@ Contents:
    about
    installation
    configuration
+   webui
 
 
 Indices and tables
