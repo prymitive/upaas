@@ -16,8 +16,7 @@ Basic settings:
      port: 27017
      database: upaas
 
-If MongoDB requires authorization for database access (recommended) add 
-username and password options.
+If MongoDB requires authorization for database access (recommended) add username and password options.
 
 .. code:: yaml
 
@@ -26,9 +25,7 @@ username and password options.
      username: username
      password: password
 
-To provide high availability to MongoDB installation it is recommended to 
-use MongoDB cluster (replica set or sharding). To pass replica set address 
-to uPaaS use uri option instead of host and port pair, example:
+To provide high availability to MongoDB installation it is recommended to use MongoDB cluster (replica set or sharding). To pass replica set address to uPaaS use uri option instead of host and port pair, example:
 
 .. code:: yaml
 
@@ -40,9 +37,7 @@ to uPaaS use uri option instead of host and port pair, example:
 Admin UI settings
 -----------------
 
-For every installation secret key must be set, it must be unique (for each 
-cluster) and unpredictable string. Every node in uPaaS cluster must 
-have identical value secret key.
+For every installation secret key must be set, it must be unique (for each cluster) and unpredictable string. Every node in uPaaS cluster must have identical value secret key.
 
 .. code:: yaml
 
@@ -59,9 +54,7 @@ Other options:
 ``domains``
 ...........
 
-  List of domains uPaaS web UI can be served for. Any domain will be allowed if 
-this option is not specified. Details can be found in `django docs 
-<https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts>`_.
+  List of domains uPaaS web UI can be served for. Any domain will be allowed if this option is not specified. Details can be found in `django docs <https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts>`_.
 
 Full example:
 
@@ -101,16 +94,13 @@ uPaaS stores files in few location, they can be customized with those settings:
 ``vassals``
 ...........
 
-  Directory where applications uWSGI config files are placed. This directory
-  must be the path that uWSGI emperor will be monitoring.
+  Directory where applications uWSGI config files are placed. This directory must be the path that uWSGI emperor will be monitoring.
 
 
 Storage
 -------
 
-Package files are stored by default in MongoDB database but custom 
-storage handlers can be created. To use local storage (only useful with single 
-node installations) use those settings:
+Package files are stored by default in MongoDB database but custom storage handlers can be created. To use local storage (only useful with single node installations) use those settings:
 
 .. code:: yaml
 
@@ -119,8 +109,7 @@ node installations) use those settings:
      settings:
        dir: /var/upaas/storage
 
-This way uPaaS will store all packages as plain files in 
-/var/upaas/storage directory.
+This way uPaaS will store all packages as plain files in /var/upaas/storage directory.
 
 To use dedicated MongoDB database for packages use:
 
@@ -139,8 +128,7 @@ To use dedicated MongoDB database for packages use:
 OS bootstrap
 ------------
 
-All application packages are built using empty os system image, so first such 
-empty image must be generated. Example config for Ubuntu server:
+All application packages are built using empty os system image, so first such empty image must be generated. Example config for Ubuntu server:
 
 .. code:: yaml
 
@@ -169,15 +157,12 @@ empty image must be generated. Example config for Ubuntu server:
 ``commands``
 ............
 
-  List of commands used to create system image files. %workdir% makro will be 
-expanded into directory path where image is being created.
+  List of commands used to create system image files. %workdir% makro will be expanded into directory path where image is being created.
 
 ``maxage``
 ..........
 
-  Images older than this value (in days) will be ignored and new image will be 
-generated. This is intended to keep system images current, with all updates 
-applied.
+  Images older than this value (in days) will be ignored and new image will be generated. This is intended to keep system images current, with all updates applied.
 
 ``packages``
 ............
@@ -188,9 +173,7 @@ applied.
 System commands
 ---------------
 
-This settings are used to tell uPaaS what commands should be used to interact 
-with system images. Mostly how to (un)install packages using system package 
-manager.
+This settings are used to tell uPaaS what commands should be used to interact with system images. Mostly how to (un)install packages using system package manager.
 
 .. code:: yaml
 
@@ -212,10 +195,7 @@ manager.
 ``install``
 ...........
 
-  Describes how to install package. ``cmd`` option contains command that needs 
-to be executed, %package% macro will be expanded into package name.
-  ``env`` and ``timelimit`` options have the same meaning as in bootstrap 
-section.
+  Describes how to install package. ``cmd`` option contains command that needs to be executed, %package% macro will be expanded into package name. ``env`` and ``timelimit`` options have the same meaning as in bootstrap section.
 
 ``uninstall``
 .............
