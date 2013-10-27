@@ -9,7 +9,7 @@ MongoDB settings
 
 Basic settings:
 
-.. code:: yaml
+.. code-block:: yaml
 
     mongodb:
       host: localhost
@@ -18,7 +18,7 @@ Basic settings:
 
 If MongoDB requires authorization for database access (recommended) add ``username`` and ``password`` options.
 
-.. code:: yaml
+.. code-block:: yaml
 
     mongodb:
       [...]
@@ -27,7 +27,7 @@ If MongoDB requires authorization for database access (recommended) add ``userna
 
 To provide high availability to MongoDB installation it is recommended to use MongoDB cluster (replica set or sharding). To pass replica set address to uPaaS use uri option instead of host and port pair, example:
 
-.. code:: yaml
+.. code-block:: yaml
 
     mongodb:
       [...]
@@ -39,7 +39,7 @@ Admin UI settings
 
 For every installation secret key must be set, it must be unique (for each cluster) and unpredictable string. Every node in uPaaS cluster must have identical value secret key.
 
-.. code:: yaml
+.. code-block:: yaml
 
     admin:
       secretkey: very-very-secret
@@ -58,7 +58,7 @@ Other options:
 
 Full example:
 
-.. code:: yaml
+.. code-block:: yaml
 
     admin:
       secretkey: very-very-secret
@@ -74,7 +74,7 @@ Paths settings
 
 uPaaS stores files in few location, they can be customized with those settings:
 
-.. code:: yaml
+.. code-block:: yaml
 
     paths:
       workdir: /var/upaas/workdir
@@ -102,7 +102,7 @@ Storage
 
 Package files are stored by default in MongoDB database but custom storage handlers can be created. To use local storage (only useful with single node installations) use those settings:
 
-.. code:: yaml
+.. code-block:: yaml
 
     storage:
       handler: upaas.storage.local.LocalStorage
@@ -113,7 +113,7 @@ This way uPaaS will store all packages as plain files in /var/upaas/storage dire
 
 To use dedicated MongoDB database for packages use:
 
-.. code:: yaml
+.. code-block:: yaml
 
     storage:
       handler: upaas.storage.mongodb.MongoDBStorage
@@ -130,7 +130,7 @@ OS bootstrap
 
 All application packages are built using empty os system image, so first such empty image must be generated. Example config for Ubuntu server:
 
-.. code:: yaml
+.. code-block:: yaml
 
     bootstrap:
       timelimit: 600
@@ -175,7 +175,7 @@ System commands
 
 This settings are used to tell uPaaS what commands should be used to interact with system images. Mostly how to (un)install packages using system package manager.
 
-.. code:: yaml
+.. code-block:: yaml
 
     commands:
       timelimit: 600
