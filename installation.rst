@@ -4,24 +4,12 @@ Installing uPaaS
 Pre-Requirements
 ----------------
 
-MongoDB database accessible from backend nodes. MongoDB is used both for uPaaS
-data and package files, so it might grow to several gigabytes or more, depending
-on the number of registered application. Each package will use at least 200MB 
-(in case of Ubuntu server).
-
-Installing from sources
------------------------
-
-TODO
+MongoDB database accessible from backend nodes. MongoDB is used both for uPaaS data and package files, so it might grow to several gigabytes or more, depending on the number of registered application. Each package will use at least 200MB (in case of Ubuntu server).
 
 Ubuntu server 12.04 LTS installation
 ------------------------------------
 
-uPaaS is packaged, developed and tested on Ubuntu 12.04 LTS release, but it
-should be working on any recent Linux distribution.
-PPA containing uPaaS packages requires some packages that are not available in
-standard 12.04 release, so few other PPAs must be added to fulfil those
-dependencies.
+uPaaS is packaged, developed and tested on Ubuntu 12.04 LTS release, but it should be working on any recent Linux distribution. PPA containing uPaaS packages requires some packages that are not available in standard 12.04 release, so few other PPAs must be added to fulfil those dependencies.
 
 Router nodes
 ^^^^^^^^^^^^
@@ -34,8 +22,7 @@ Add required PPAs:
     sudo add-apt-repository ppa:chris-lea/zeromq
     sudo add-apt-repository ppa:upaas/stable
 
-Install upaas-router meta package. It contains uWSGI config files needed to run
-uWSGI FastRouter node.
+Install upaas-router meta package. It contains uWSGI config files needed to run uWSGI FastRouter node.
 
 .. code-block:: none
 
@@ -63,5 +50,4 @@ Install python-upaas-admin package. It contains uPaaS API and web UI server.
     sudo apt-get dist-upgrade
     sudo apt-get install python-upaas-admin
 
-After installing uPaaS admin package edit /etc/upaas/upaas.yml config, it must
-be identical on all backend nodes.
+After installing uPaaS admin package edit /etc/upaas/upaas.yml config, it must be identical on all backend nodes. Be sure to set proper storage handler since 0.1 release defaults to local filesystem storage.
