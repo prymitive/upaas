@@ -157,7 +157,7 @@ All application packages are built using empty os system image, so first such em
 ``commands``
 ............
 
-  List of commands used to create system image files. ``%workdir%`` makro will be expanded into directory path where image is being created.
+  List of commands used to create system image files. ``%workdir%`` macro will be expanded into directory path where image is being created.
 
 ``maxage``
 ..........
@@ -248,4 +248,4 @@ Example:
 Interpreter settings
 --------------------
 
-Every avaiable interpreter must be configured before app can use it. See :doc:`interpreters`.
+Every available interpreter must be configured before app can use it. See :doc:`interpreters`.
