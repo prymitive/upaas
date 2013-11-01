@@ -77,3 +77,8 @@ Once installed and configured we need to create user with administrator rights:
 .. code-block:: none
 
     upaas_admin create_user --login john --firstname John --lastname Doe --email john@doe.com --admin
+
+Add router node(s)
+------------------
+
+Login as administrator, go to admin area and create router node(s). Backends will auto-register during task worker startup.
