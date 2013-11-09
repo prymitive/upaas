@@ -6,6 +6,11 @@
 Welcome to uPaaS's documentation!
 =================================
 
+You can report bugs and feature requests on the `issues page <https://github.com/prymitive/upaas/issues>`_.
+
+<iframe src="http://ghbtns.com/github-btn.html?user=prymitive&repo=upaas&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+
 Contents:
 
 .. toctree::
