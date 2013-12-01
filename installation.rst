@@ -69,6 +69,13 @@ See See :doc:`configuration`.
 Once configured uPaaS web UI will be avaiable under http://backend-node-ip/.
 See ``/etc/upaas/upaas_admin_local.ini`` for exampled configuration needed to connect uPaaS web UI to upaas-router nodes for high availability.
 
+Create database indexes
+-----------------------
+
+.. code-block:: none
+
+    upaas_admin create_indexes
+
 Add first user
 --------------
 

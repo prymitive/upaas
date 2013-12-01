@@ -47,6 +47,6 @@ Deploying redmine:
     upaas register redmine path/to/redmine.yml
     upaas build redmine
     [wait until package is build]
-    upaas start redmine -H 4 512
+    upaas start redmine --workers-min 1 --workers-max 4
 
-We will have redmine instance with HA enabled (multiple backends), 4 processes and 512MB memory limit (per backend).
+We will have redmine instance with 1 to 4 processes (number scaled based on current load).
