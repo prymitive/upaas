@@ -1,8 +1,10 @@
 uPaaS configuration
 ===================
 
+Configuration file uses YAML syntax.
 All options are stored in /etc/upaas/upaas.yml configuration file.
-Config file uses YAML syntax.
+For convenience settings are split into multiple files that are included in main config (upaas.yml).
+Splitting uses ``!include <path>`` statement. If path is not absolute it will be interpreted as relative to the parent file (the one with include statement).
 
 MongoDB settings
 ----------------
@@ -37,19 +39,25 @@ To provide high availability to MongoDB installation it is recommended to use Mo
 Admin UI settings
 -----------------
 
-For every installation secret key must be set, it must be unique (for each cluster) and unpredictable string. Every node in uPaaS cluster must have identical value secret key.
+``secretkey``
+.............
 
-.. code-block:: yaml
+  For every installation secret key must be set, it must be unique (for each cluster) and unpredictable string. Every node in uPaaS cluster must have identical value secret key.
 
-    admin:
-      secretkey: very-very-secret
+  .. code-block:: yaml
 
-Other options:
+      admin:
+        secretkey: very-very-secret
+
+``loglevel``
+............
+
+  Verbosity level for all logged messages, possible values: debug, info, warning, error.
 
 ``debug``
 .........
 
-  Enabled debug messages in logs.
+  Enable django debug mode, see `django docs <https://docs.djangoproject.com/en/dev/ref/settings/#debug>`_ for details.
 
 ``domains``
 ...........
@@ -62,6 +70,7 @@ Full example:
 
     admin:
       secretkey: very-very-secret
+      loglevel: info
       debug: false
       domains:
         - "admin.upaas.org"
@@ -245,6 +254,57 @@ Example:
         port_min: 2001
         port_max: 7999
 
+``uwsgi``
+.........
+
+  Contains uWSGI specific options.
+  Currently only ``safe_options`` section is available with list of safe uWSGI options that user can set in application metadata.
+  Safe options should can be written as python compatible regular expressions.
+
+Example:
+
+.. code-block:: yaml
+
+  uwsgi:
+    safe_options:
+      - "^check-static"
+      - "^static-"
+      - "^harakiri"
+      - "^enable-threads$"
+      - "^(worker-|)reload-mercy$"
+      - "^max-requests$"
+      - "^(min|max)-worker-lifetime$"
+      - "^upload-progress$"
+      - "^lazy"
+      - "^route"
+      - "^(response|final|error)-route$"
+
+Defaults
+--------
+
+Default settings.
+Currently only ``limits`` section is available.
+Those limits will be used for all users that do not have custom limits set by uPaaS administrator.
+
+``running_apps``
+................
+
+  Numer of applications user is allowed to run simultaneously, 0 means no limit. Default is 0.
+
+``workers``
+...........
+
+  Number of workers user is allowed to allocate to running applications, 0 means no limit. Default is 0.
+
+``memory_per_worker``
+.....................
+
+  Memory limit for application workers, this limit is applied to each worker process. Default is 128.
+
+``packages_per_app``
+....................
+
+  Number of package files that are kept for every applications, allowing to rollback application to previous package. Default is 5.
 
 Interpreter settings
 --------------------
