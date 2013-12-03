@@ -306,6 +306,17 @@ Those limits will be used for all users that do not have custom limits set by uP
 
   Number of package files that are kept for every applications, allowing to rollback application to previous package. Default is 5.
 
+Example:
+
+.. code-block:: yaml
+
+  limits:
+    running_apps: 0
+    workers: 16
+    memory_per_worker: 128
+    packages_per_app: 5
+
+
 Interpreter settings
 --------------------
 
