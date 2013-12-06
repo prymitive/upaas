@@ -51,7 +51,7 @@ Add required PPAs:
 
     sudo add-apt-repository ppa:brightbox/ruby-ng
     sudo add-apt-repository ppa:chris-lea/zeromq
-    sudo add-apt-repository ppa:chris-lea/php5.5
+    sudo add-apt-repository ppa:ondrej/php5
     sudo add-apt-repository ppa:upaas/stable
 
 Install python-upaas-admin package. It contains uPaaS API and web UI server.
