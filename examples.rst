@@ -6,8 +6,10 @@ Note
 
 Current version of metadata examples can be found at `github <https://github.com/prymitive/upaas-admin/tree/master/tests/meta>`_.
 
-Redmine
--------
+Ruby On Rails app
+-----------------
+
+In this example `redmine <http://redmine.org>`_ will be deployed.
 
 .. code-block:: yaml
 
@@ -75,3 +77,57 @@ Redmine
           host: < db host >
           username: redmine
           password: "< password >"
+
+
+Django app
+----------
+
+In this example `Django jQuery File Upload <https://github.com/sigurdga/django-jquery-file-upload>`_ demo application will be deployed.
+
+.. code-block:: yaml
+
+    # only git is needed to clone application repository from github
+    os:
+      Debian: &debian
+        packages:
+          - git-core
+      Ubuntu: *debian
+
+    # both 2.7 and 3.x is supported (needs django == 1.5)
+    # application will be deployed using Django built in WSGI handler module
+    interpreter:
+      type: python
+      versions:
+        - "3.2"
+        - "2.7"
+      settings:
+        module: django.core.handlers.wsgi:WSGIHandler()
+
+    # clone repository from github
+    repository:
+      clone: git clone --depth=10 --quiet git://github.com/sigurdga/django-jquery-file-upload.git %destination%
+      update:
+        - git reset --hard
+        - git pull
+      info: git log -n 1
+      changelog: git log --no-merges %old%..%new%"
+
+    # Django needs to be told how to load settings module
+    env:
+      DJANGO_SETTINGS_MODULE: django-jquery-file-upload.settings
+
+    # django 1.5 is required, 1.6 is not yet supported
+    # we also symlink app directory since /home will be added to python modules path
+    # so with this symlink python can load our app as django-jquery-file-upload module
+    actions:
+      setup:
+        main:
+          - ln -sf /home/app /home/django-jquery-file-upload
+          - pip install "django<1.6"
+          - pip install pillow
+          - python manage.py syncdb --noinput
+
+    # pass additional settings to uWSGI so that all it will handle all requests for static files
+    uwsgi:
+      settings:
+        - "static-map = /static=fileupload/static"
