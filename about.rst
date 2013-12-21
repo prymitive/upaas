@@ -35,3 +35,8 @@ Backends are running uPaaS admin web UI and task queue worker processes. There a
 
   * builder_worker - handles application package build tasks
   * backend_worker - handles all tasks for backend it's running on
+
+Notes
+~~~~~
+
+uPaaS is still under heavy develoment, many features are missing or incomplete.
