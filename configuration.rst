@@ -239,7 +239,7 @@ Application deployment settings
   All domains used in application must point to uPaaS router nodes, user will be notified during custom domain assigment.
   To protect from domain hijacking every custom domain that user want to assign to his application must be verified.
   This is done by checking if domain contains TXT record with application key.
-  This can be disabled if only trusted apps are deployed in uPaaS cluster, set ```apps.domains.validation = False``` to disable it.
+  This can be disabled if only trusted apps are deployed in uPaaS cluster, set ``apps.domains.validation = False`` to disable it.
 
 
 ``tcp``
@@ -291,15 +291,15 @@ Example:
   Configuration for carbon/graphite statistics integration.
   This is optional feature and it requires working carbon server and graphite frontend applications.
   Available options:
-  # ```carbon``` list of carbon servers for pushing statistics from uWSGI backends
-  # ```render_url``` graphite frontend url, it will be used for rendering statistics, must be accessible by uPaaS users
-  # ```timeout``` timeout for pushing statistics from uWSGI backend, default is 3 seconds
-  # ```frequency``` push statistics from uWSGI to carbon every N seconds, default is 60
-  # ```max_retry``` how many times uWSGI should retry pushing stats in case of errors, default is 1
-  # ```retry_delay``` how many seconds should uWSGI wait before retry, default is 7
-  # ```root``` root node for all statistics, default is "uwsgi"
+  # ``carbon`` list of carbon servers for pushing statistics from uWSGI backends
+  # ``render_url`` graphite frontend url, it will be used for rendering statistics, must be accessible by uPaaS users
+  # ``timeout`` timeout for pushing statistics from uWSGI backend, default is 3 seconds
+  # ``frequency`` push statistics from uWSGI to carbon every N seconds, default is 60
+  # ``max_retry`` how many times uWSGI should retry pushing stats in case of errors, default is 1
+  # ``retry_delay`` how many seconds should uWSGI wait before retry, default is 7
+  # ``root`` root node for all statistics, default is "uwsgi"
 
-  Only ```carbon``` and ```render_url``` options are required to integrate carbon/graphite with uPaaS.
+  Only ``carbon`` and ``render_url`` options are required to integrate carbon/graphite with uPaaS.
 
 Defaults
 --------
