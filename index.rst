@@ -22,7 +22,6 @@ Contents:
    about
    installation
    configuration
-   webui
    client
    buildprocess
 
