@@ -33,10 +33,10 @@ Syntax
 
 Configuration for repository life cycle management:
 
-    # clone - how to clone repository, allowed variables: %destination% - path where application should be cloned to
-    # update - how to fetch updates
-    # info - how to obtain informations about this repository (latest commit), not used yet
-    # changelog - how to generate list of changes since last commit, allowed variables - %old%, %new% - id of old and new commit id, not used yet
+    * clone - how to clone repository, allowed variables: %destination% - path where application should be cloned to
+    * update - how to fetch updates
+    * info - how to obtain informations about this repository (latest commit), not used yet
+    * changelog - how to generate list of changes since last commit, allowed variables - %old%, %new% - id of old and new commit id, not used yet
 
 .. code-block:: yaml
 
