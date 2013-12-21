@@ -24,6 +24,7 @@ Contents:
    configuration
    client
    buildprocess
+   metadata
    examples
 
 
