@@ -10,7 +10,7 @@ Domain name that will be pointing to router nodes. You don't need to buy one for
 
 .. code-block:: none
 
-    address=/upaas.org/<router node ip>
+    address=/upaas.domain/<router node ip>
 
 Ubuntu server 12.04 LTS installation
 ------------------------------------

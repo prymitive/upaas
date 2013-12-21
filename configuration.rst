@@ -73,7 +73,7 @@ Full example:
       loglevel: info
       debug: false
       domains:
-        - "admin.upaas.org"
+        - "admin.upaas.domain"
         - "admin.upaas.com"
         - "*.upaas-admin.io"
 
@@ -255,7 +255,7 @@ Example:
       uid: www-data
       gid: www-data
       home: /home/app
-      domain: upaas.org
+      domain: upaas.domain
       tcp:
         port_min: 2001
         port_max: 7999
@@ -284,6 +284,22 @@ Example:
       - "^lazy"
       - "^route"
       - "^(response|final|error)-route$"
+
+``graphite``
+............
+
+  Configuration for carbon/graphite statistics integration.
+  This is optional feature and it requires working carbon server and graphite frontend applications.
+  Available options:
+  # ```carbon``` list of carbon servers for pushing statistics from uWSGI backends
+  # ```render_url``` graphite frontend url, it will be used for rendering statistics, must be accessible by uPaaS users
+  # ```timeout``` timeout for pushing statistics from uWSGI backend, default is 3 seconds
+  # ```frequency``` push statistics from uWSGI to carbon every N seconds, default is 60
+  # ```max_retry``` how many times uWSGI should retry pushing stats in case of errors, default is 1
+  # ```retry_delay``` how many seconds should uWSGI wait before retry, default is 7
+  # ```root``` root node for all statistics, default is "uwsgi"
+
+  Only ```carbon``` and ```render_url``` options are required to integrate carbon/graphite with uPaaS.
 
 Defaults
 --------

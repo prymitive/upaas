@@ -18,7 +18,7 @@ Before we can start using uPaaS client we must create configuration file:
 .. code-block:: yaml
 
     server:
-      url: http://admin.upaas.org
+      url: http://admin.upaas.domain
       login: john
       apikey: 98f2ec25ffc9d57e7f168d7c1798c51da1c6a7e3
 
