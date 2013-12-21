@@ -131,3 +131,48 @@ In this example `Django jQuery File Upload <https://github.com/sigurdga/django-j
     uwsgi:
       settings:
         - "static-map = /static=fileupload/static"
+
+
+PHP app
+-------
+
+In this example phpmyadmin will be deployed.
+
+.. code-block:: yaml
+
+    os:
+      Debian: &debian
+        packages:
+          - git-core
+          - php5-mysql
+          - php5-mcrypt
+      Ubuntu: *debian
+
+    interpreter:
+      type: php
+      versions:
+        - "5.5"
+
+    repository:
+      clone: git clone --depth=10 --quiet --branch STABLE git://github.com/phpmyadmin/phpmyadmin.git %destination%
+      update:
+        - git reset --hard
+        - git pull
+      info: git log -n 1
+      changelog: git log --no-merges %old%..%new%"
+
+    files:
+      config/config.inc.php: |
+        <?php
+        $cfg['blowfish_secret'] = 'changeme';
+        $i = 0;
+        $i++;
+        $cfg['Servers'][$i]['auth_type'] = 'cookie';
+        $cfg['Servers'][$i]['host'] = 'localhost';
+        $cfg['Servers'][$i]['connect_type'] = 'tcp';
+        $cfg['Servers'][$i]['compress'] = false;
+        $cfg['Servers'][$i]['extension'] = 'mysqli';
+        $cfg['Servers'][$i]['AllowNoPassword'] = false;
+        $cfg['UploadDir'] = '';
+        $cfg['SaveDir'] = '';
+        ?>
