@@ -230,11 +230,17 @@ Application deployment settings
 
   Path where application directory will be placed inside system image.
 
-``domain``
+``domains``
 ..........
 
-  Every application will be accessible using system domain, this is where name of this domain is specified.
-  This domain must belong to you and point to uPaaS router nodes (using dns round robin or virtual ip).
+  Every application will be accessible using:
+    * automatic system domain (use ``app.domains.system`` key to set it)
+    * custom domain assigned by the user (user must own this domain or at least be able to modify it)
+  All domains used in application must point to uPaaS router nodes, user will be notified during custom domain assigment.
+  To protect from domain hijacking every custom domain that user want to assign to his application must be verified.
+  This is done by checking if domain contains TXT record with application key.
+  This can be disabled if only trusted apps are deployed in uPaaS cluster, set ```apps.domains.validation = False``` to disable it.
+
 
 ``tcp``
 .......
