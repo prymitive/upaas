@@ -5,6 +5,8 @@ Metadata format
 Syntax
 ------
 
+Configuration file uses YAML syntax.
+
 | Distribution specific settings, currently only list of packages to install can be configured here.
 | < id > is the id of the distribution same as output of `lsb_release -si` command.
 
