@@ -5,9 +5,8 @@ Metadata format
 Syntax
 ------
 
-Distribution specific settings, currently only list of packages to install can be configured here.
-
-< id > is the id of the distribution same as output of `lsb_release -si` command.
+| Distribution specific settings, currently only list of packages to install can be configured here.
+| < id > is the id of the distribution same as output of `lsb_release -si` command.
 
 .. code-block:: yaml
 
@@ -16,15 +15,11 @@ Distribution specific settings, currently only list of packages to install can b
         packages:
           - < package name >
 
-Configuration for interpreter used in application.
-
-```type``` can be any supported type (python, ruby, php).
-
-You can provide list of interpreter versions supported by your application, highest supported version will be used.
-
-```settings``` key allows to pass interpreter specific options, uPaaS administator should document what options are avilable here.
-
-By default only module option for python interpreter can be set under settings key, uPaaS administrator might add support for more options.
+| Configuration for interpreter used in application.
+| ```type``` can be any supported type (python, ruby, php).
+| You can provide list of interpreter versions supported by your application, highest supported version will be used.
+| ```settings``` key allows to pass interpreter specific options, uPaaS administator should document what options are avilable here.
+| By default only module option for python interpreter can be set under settings key, uPaaS administrator might add support for more options.
 
 .. code-block:: yaml
 
@@ -77,9 +72,8 @@ List of files to create after cloning app repository.
     files:
       < path>: < content >
 
-Under ```uwsgi``` key you can pass additional settings to uWSGI.
-
-uPaaS administrator might limit options that can be set here, unsupported options will be ignored.
+| Under ```uwsgi``` key you can pass additional settings to uWSGI.
+| uPaaS administrator might limit options that can be set here, unsupported options will be ignored.
 
 .. code-block:: yaml
 
