@@ -14,6 +14,17 @@ Welcome to uPaaS's documentation!
 You can report bugs and feature requests on the `issues page <https://github.com/prymitive/upaas/issues>`_.
 
 
+Release notes
+-------------
+
+After installing current version run the command below to migrate database:
+
+.. code-block:: none
+
+    upaas_admin migrate_db
+
+
+
 Contents:
 
 .. toctree::
