@@ -9,7 +9,7 @@ Released: 06.01.2014
 * Added test suite
 * Fixed many small bugs found by new tests
 * Django 1.6.1 is now used
-* Refactored custom domains (db migration needed with ```upaas_admin migrate_db``` command)
+* Refactored custom domains (db migration needed with ``upaas_admin migrate_db`` command)
 
 0.2
 ---
