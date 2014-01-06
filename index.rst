@@ -31,6 +31,7 @@ Contents:
    :maxdepth: 1
 
    about
+   changelog
    installation
    configuration
    client
