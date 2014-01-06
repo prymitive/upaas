@@ -24,6 +24,15 @@ After installing current version run the command below to migrate database:
     upaas_admin migrate_db
 
 
+Demo site
+---------
+
+URL: http://testing.u-paas.org
+
+Login: guest
+
+Password: dem0
+
 
 Contents:
 
