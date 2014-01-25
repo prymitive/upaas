@@ -64,6 +64,16 @@ Admin UI settings
 
   List of domains uPaaS web UI can be served for. Any domain will be allowed if this option is not specified. Details can be found in `django docs <https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts>`_.
 
+``smtp``
+........
+
+  Contains options for sending email notifications. Avaiable settings:
+    * ``host`` - hostname of SMTP server used for sending emails, default is localhost
+    * ``port`` - remote SMTP port to use, defult is 25
+    * ``tls`` - whenever to use TLS or not, default is false
+    * ``username`` - username if SMTP authentication is going to be used, default is not set - not authentication
+    * ``password`` - password if SMTP authentication is going to be used, default is not set - not authentication
+
 Full example:
 
 .. code-block:: yaml
@@ -76,6 +86,12 @@ Full example:
         - "admin.upaas.domain"
         - "admin.upaas.com"
         - "*.upaas-admin.io"
+      smtp:
+        host: localhost
+        port: 25
+        tls: true
+        username: upaas@localhost
+        password: smtppass
 
 
 Paths settings
