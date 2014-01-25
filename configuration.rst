@@ -73,6 +73,7 @@ Admin UI settings
     * ``tls`` - whenever to use TLS or not, default is false
     * ``username`` - username if SMTP authentication is going to be used, default is not set - not authentication
     * ``password`` - password if SMTP authentication is going to be used, default is not set - not authentication
+    * ``sender`` - email address used as sender address, default is no-reply@localhost
 
 Full example:
 
