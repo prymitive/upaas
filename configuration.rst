@@ -33,8 +33,9 @@ To provide high availability to MongoDB installation it is recommended to use Mo
 
     mongodb:
       [...]
-      uri: mongodb://db1,db2/?replicaSet=upaas
+      uri: mongodb://db1,db2/?replicaSet=upaas&readPreference=primaryPreferred
 
+.. note:: Remeber to set read preference when using HA MongoDB setup.
 
 Admin UI settings
 -----------------
