@@ -25,7 +25,6 @@ Add required PPAs:
 .. code-block:: none
 
     sudo add-apt-repository ppa:nginx/stable
-    sudo add-apt-repository ppa:chris-lea/zeromq
     sudo add-apt-repository ppa:upaas/stable
 
 Install upaas-router meta package. It contains uWSGI config files needed to run uWSGI FastRouter node.
@@ -50,7 +49,7 @@ Add required PPAs:
 .. code-block:: none
 
     sudo add-apt-repository ppa:brightbox/ruby-ng
-    sudo add-apt-repository ppa:chris-lea/zeromq
+    sudo add-apt-repository ppa:fkrull/deadsnakes
     sudo add-apt-repository ppa:ondrej/php5
     sudo add-apt-repository ppa:upaas/stable
 
