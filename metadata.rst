@@ -37,8 +37,6 @@ Configuration for repository life cycle management:
 
     * clone - how to clone repository, allowed variables: %destination% - path where application should be cloned to
     * update - how to fetch updates
-    * info - how to obtain informations about this repository (latest commit), not used yet
-    * changelog - how to generate list of changes since last commit, allowed variables - %old%, %new% - id of old and new commit id, not used yet
 
 .. code-block:: yaml
 
@@ -47,8 +45,33 @@ Configuration for repository life cycle management:
       update:
         - < command >
         - < command >
-      info: < command >
-      changelog: < command >
+
+After cloning or updating repository uPaaS will try to extract some information about current revision, this should work out of the box for:
+
+    * git
+    * bazaar
+    * mercurial
+    * subversion
+
+For any other repository type user can set custom commands used for revision information extraction:
+
+.. code-block:: yaml
+
+    repository:
+      revision:
+        id: <command>
+        author: <command>
+        date: <command>
+        description: <command>
+        changelog: <command>
+
+Command description:
+
+    * id - must return current revision id
+    * author - must return current revision author
+    * date - must return current revision date, date must be in any format parsable using `timestring module <https://pypi.python.org/pypi/timestring>`_
+    * description - must return current revision description
+    * changelog - must return list of changes between two revisions, string ``%old%`` will  be substituted with previous revision id, string ``%new%`` will be substituted with current revision id
 
 List of environment variables that should be set for this application, optional.
 
