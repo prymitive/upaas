@@ -24,7 +24,6 @@ Add required PPAs:
 
 .. code-block:: none
 
-    sudo add-apt-repository ppa:nginx/stable
     sudo add-apt-repository ppa:upaas/stable
 
 Install upaas-router meta package. It contains uWSGI config files needed to run uWSGI FastRouter node.
@@ -34,12 +33,6 @@ Install upaas-router meta package. It contains uWSGI config files needed to run 
     sudo apt-get update
     sudo apt-get dist-upgrade
     sudo apt-get install upaas-router
-
-Remove default nginx site config.
-
-.. code-block:: none
-
-    rm /etc/nginx/sites-enabled/default
 
 Backend nodes
 ^^^^^^^^^^^^^
