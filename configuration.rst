@@ -346,6 +346,11 @@ Those limits will be used for all users that do not have custom limits set by uP
 
   Number of package files that are kept for every applications, allowing to rollback application to previous package. Default is 5.
 
+``max_log_size``
+................
+
+  Maximum application instance log size (in MB). Each instance logs to file in application home directory (upaas.log), once size limit is reached log is rotated, one rotated log is kept.
+
 Example:
 
 .. code-block:: yaml
@@ -355,7 +360,7 @@ Example:
     workers: 16
     memory_per_worker: 128
     packages_per_app: 5
-
+    max_log_size: 50
 
 Interpreter settings
 --------------------
