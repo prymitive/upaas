@@ -106,6 +106,21 @@ List of files to create after cloning app repository.
       settings:
         - "option = value"
 
+| Cron tasks. By default cron command will be executed on every running instance, to run it only on one instance set ``singleton`` to ``true``.
+
+.. code-block:: yaml
+
+    cron:
+      - command: <command>
+        minute: <0-59>
+        hour: <0-24>
+        day: <1-31>
+        month: <1-12>
+        weekday: <0-7>
+        singelton: <true|false>
+      - command <command 2>
+        [...]
+
 Example
 -------
 
