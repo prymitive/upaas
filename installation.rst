@@ -34,6 +34,8 @@ Install upaas-router meta package. It contains uWSGI config files needed to run 
     sudo apt-get dist-upgrade
     sudo apt-get install upaas-router
 
+Place custom SSL certificate and key in /etc/upaas/ssl (server.crt and server.key). This step is optional, by default self signed certificate is used.
+
 Backend nodes
 ^^^^^^^^^^^^^
 
