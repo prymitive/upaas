@@ -31,10 +31,7 @@ Routers are load balancers using uWSGI in FastRouter mode.
 Backend nodes
 ~~~~~~~~~~~~~
 
-Backends are running uPaaS admin web UI and task queue worker processes. There are 2 type of queue workers:
-
-  * builder_worker - handles application package build tasks
-  * backend_worker - handles all tasks for backend it's running on
+Backends are running uPaaS admin web UI and task worker processes.
 
 Notes
 ~~~~~
