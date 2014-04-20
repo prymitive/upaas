@@ -31,7 +31,12 @@ Step 4 - Cloning application
 
 If this is first or fresh package uPassS will try to clone application, otherwise it will only try to update it to the latest revision. This step can be customized by uPaaS administrator, application metadata might override it with custom commands.
 
-Step 5 - Executing setup actions
+Step 5 - Creating files
+-----------------------
+
+All files present in metadata ``files`` section are created.
+
+Step 6 - Executing setup actions
 --------------------------------
 
 Every type of application requires different commands to be deployed properly, for example:
@@ -46,7 +51,7 @@ uPaaS handles that by executing few customizable actions:
   * after - this action is intended for application, they should call database migration commands here, uPaaS administrator can provide default actions in configuration file
   * finalize - this action can only be customized by uPaaS administrator, it is intended to run cleanup commands
 
-Step 6 - Creating package archive
+Step 7 - Creating package archive
 ---------------------------------
 
 Compressed tar archive will be created and uploaded to configured storage handler. This can be customized only by uPaaS administrator.
