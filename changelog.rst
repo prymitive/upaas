@@ -1,7 +1,14 @@
 Changelog
 =========
 
-0.2.1 
+0.3.0
+-----
+
+Released: work in progress
+
+* task queue replaced with new task framework
+
+0.2.1
 -----
 
 Released: 06.01.2014
