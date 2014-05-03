@@ -27,7 +27,7 @@ After installing current version run the command below to migrate database:
 Demo site
 ---------
 
-* URL: http://testing.u-paas.org
+* URL: https://beta.u-paas.org
 * Login: guest
 * Password: dem0
 

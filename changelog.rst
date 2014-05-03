@@ -7,6 +7,7 @@ Changelog
 Released: work in progress
 
 * task queue replaced with new task framework
+* backbone and tastypie used for ajax
 
 0.2.1
 -----
