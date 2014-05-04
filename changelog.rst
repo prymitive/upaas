@@ -4,10 +4,12 @@ Changelog
 0.3.0
 -----
 
-Released: work in progress
+Released: 04.05.2014
 
 * task queue replaced with new task framework
 * backbone and tastypie used for ajax
+* uWSGI 2.0 packages in PPA
+* many improvements under the hood
 
 0.2.1
 -----
