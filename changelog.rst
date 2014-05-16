@@ -9,6 +9,7 @@ Released: under development
 * improved instance placement - uPaaS is now aware of each backend resources and can pick the best backends for each application instance
 * improved backend and router configuration
 * improved self healing - uPaaS will now try to detect and fix more instance issues
+* Font Awesome updated to 4.1.0
 
 0.3.0
 -----
