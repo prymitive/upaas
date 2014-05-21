@@ -4,7 +4,7 @@ Changelog
 0.3.1
 -----
 
-Released: under development
+Released: 21.05.2014
 
 * improved instance placement - uPaaS is now aware of each backend resources and can pick the best backends for each application instance
 * improved backend and router configuration
