@@ -44,6 +44,7 @@ Contents:
    client
    buildprocess
    metadata
+   features
    examples
 
 
